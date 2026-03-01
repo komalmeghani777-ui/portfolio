@@ -1,0 +1,175 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SMOOTH SCROLLING */
+html {
+  scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+  background-color: #020617;
+  color: #ffffff;
+}
+
+/* NAVBAR LINKS */
+nav a {
+  position: relative;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #a855f7;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO IMAGE */
+.profile-img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+}
+
+/* BUTTON EFFECTS */
+a.btn,
+button {
+  transition: all 0.3s ease;
+}
+
+a.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* SECTION HEADINGS */
+section h2 {
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: #a855f7;
+  bottom: -8px;
+  left: 0;
+}
+
+/* SKILL CARDS */
+#skills div.bg-gray-800 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#skills div.bg-gray-800:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+}
+
+/* PROJECT CARDS */
+#projects div.bg-gray-900 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects div.bg-gray-900:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+}
+
+/* CONTACT LINKS */
+#contact span {
+  cursor: pointer;
+}
+
+#contact span:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+}
+/* SCROLL ANIMATIONS */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RIPPLE EFFECT */
+a, button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(168, 85, 247, 0.6);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+/* SCROLL TO TOP BUTTON */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #a855f7;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  font-size: 18px;
+}
+
+.scroll-top:hover {
+  background: #9333ea;
+}
